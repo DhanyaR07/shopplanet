@@ -1,0 +1,30 @@
+/* UX layer: glass panels, tidy toolbar menu, location pill, mobile bottom sheet, heatmap legend */
+aside{background:linear-gradient(180deg,rgba(24,31,62,.97),rgba(13,17,34,.98));box-shadow:6px 0 30px rgba(0,0,0,.35)}
+.chip{border-radius:20px;transition:.2s}.chip.on,.chip:hover{box-shadow:0 0 0 1px var(--ac) inset}
+#list>*{transition:transform .15s,box-shadow .15s}#list>*:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.ov button{border-radius:22px;backdrop-filter:blur(10px);transition:.15s}.ov button:hover{transform:translateY(-1px)}
+#mbtn{font-weight:700}
+#menu{position:absolute;z-index:40;display:none;flex-direction:column;gap:6px;padding:10px;background:var(--p);border:1px solid var(--ln);border-radius:16px;box-shadow:0 14px 40px rgba(0,0,0,.45);min-width:210px}
+#menu.on{display:flex}#menu button{width:100%;text-align:left;border-radius:10px!important;padding:9px 12px}
+#locbar{position:fixed;z-index:25;left:396px;bottom:16px;display:flex;align-items:center;gap:10px;background:var(--p);border:1px solid var(--ln);border-radius:30px;padding:7px 8px 7px 14px;box-shadow:0 10px 30px rgba(0,0,0,.4);font-size:13px}
+#locbar small{display:block;color:var(--lo);font-size:11px}#locbar button{background:var(--ac);color:#06201b;border:0;border-radius:22px;padding:9px 14px;font-weight:700;cursor:pointer}
+#sc{position:fixed;inset:0;z-index:80;background:rgba(5,8,20,.6);display:none;align-items:center;justify-content:center;padding:16px}#sc.on{display:flex}
+#sc .bx{background:var(--p);color:var(--tx);border:1px solid var(--ln);border-radius:18px;width:min(520px,100%);max-height:92vh;overflow:auto;padding:18px}
+#sc .g{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}#sc .g button{background:var(--p2);border:1px solid var(--ln);border-radius:12px;padding:11px;cursor:pointer;text-align:left}#sc .g button:hover{border-color:var(--ac)}
+#sc .lv2{display:flex;gap:6px;margin-top:10px}#sc .lv2 button{flex:1;background:var(--p2);border:1px solid var(--ln);border-radius:10px;padding:7px;cursor:pointer}#sc .lv2 .on{background:var(--ac);color:#06201b}
+#sc .x{float:right;background:var(--p2);border:0;border-radius:50%;width:28px;height:28px;cursor:pointer}
+.rpt{margin:10px 0;width:100%;background:none;border:1px dashed var(--ln);border-radius:10px;padding:8px;color:var(--lo);cursor:pointer}.rpt:hover{color:var(--ac);border-color:var(--ac)}
+#hl{position:fixed;z-index:25;right:16px;bottom:16px;display:none;align-items:center;gap:8px;background:var(--p);border:1px solid var(--ln);border-radius:12px;padding:8px 12px;font-size:12px}#hl.on{display:flex}#hl i{width:110px;height:8px;border-radius:5px;background:linear-gradient(90deg,hsl(120,85%,50%),hsl(60,85%,50%),hsl(0,85%,50%))}
+#grab{display:none}
+@media(max-width:860px){#app{grid-template-columns:1fr!important;grid-template-rows:1fr!important}
+ aside{position:fixed!important;left:0;right:0;bottom:0;top:auto!important;height:auto!important;max-height:52vh;z-index:30;border-radius:20px 20px 0 0;border-right:0;border-top:1px solid var(--ln);box-shadow:0 -10px 30px rgba(0,0,0,.4);transition:max-height .25s}
+ aside.min{max-height:116px;overflow:hidden}#grab{display:block;width:44px;height:4px;border-radius:3px;background:var(--lo);opacity:.6;margin:0 auto 8px;cursor:pointer;padding:6px 0;background-clip:content-box}
+ #locbar{left:10px;right:10px;bottom:auto;top:60px;justify-content:space-between}#hl{bottom:130px}}
+/* menu items: explicit colours so they read in both dark and light themes */
+#menu button{background:var(--p2)!important;color:var(--tx)!important;border:1px solid var(--ln)!important;font-size:14px;cursor:pointer;backdrop-filter:none}
+#menu button:hover{border-color:var(--ac)!important;transform:none}
+#menu button.on{background:var(--ac)!important;color:#06201b!important;font-weight:700}
+
+body.light aside{background:linear-gradient(180deg,#fffdf7,#f4ecd8);box-shadow:6px 0 30px rgba(120,90,20,.15)}
+body.light #menu,body.light #locbar,body.light #sc .bx,body.light #hl{background:var(--p);color:var(--tx)}
+@media(max-width:860px){#tabs{top:10px!important;left:10px!important;right:10px!important}#locbar{top:98px!important}#loc{top:166px!important;right:10px!important}}
